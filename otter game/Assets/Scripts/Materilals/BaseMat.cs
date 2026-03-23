@@ -1,23 +1,21 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "BaseMaterial", menuName = "Scriptable Objects/BaseMaterial")]
-public class BaseMaterial : ScriptableObject
+public class BaseMat
 {
     [SerializeField] private string materialName;
     [SerializeField] private int id;
     [SerializeField] private int materialStackAmount;
+    [SerializeField] private int materialAmount;
     [SerializeField] private Sprite materialSprite;
-    [SerializeField] private BaseMat matClass;
-
     public string MaterialName
     {
-        get 
-        { 
-            return materialName; 
-        } 
-        set 
-        { 
-            materialName = value; 
+        get
+        {
+            return materialName;
+        }
+        set
+        {
+            materialName = value;
         }
     }
 
@@ -28,6 +26,17 @@ public class BaseMaterial : ScriptableObject
             return materialStackAmount;
         }
     }
+    public int MaterialAmount
+    {
+        get
+        {
+            return materialAmount;
+        }
+        set
+        {
+            materialAmount = value;
+        }
+    }
     public Sprite MaterialSprite
     {
         get
@@ -35,5 +44,4 @@ public class BaseMaterial : ScriptableObject
             return materialSprite;
         }
     }
-
 }

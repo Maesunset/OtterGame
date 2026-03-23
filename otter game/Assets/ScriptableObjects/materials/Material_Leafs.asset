@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46aae3c97a5400f43a4a5b0931333fa6, type: 3}
   m_Name: Material_Leafs
   m_EditorClassIdentifier: Assembly-CSharp::Material_Leafs
-  materialName: "hfdsalkasfhasl\xF1k"
+  materialName: Leaf
   id: 3
   materialStackAmount: 0
-  materialAmount: 10
   materialSprite: {fileID: 0}

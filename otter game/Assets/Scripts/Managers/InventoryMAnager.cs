@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryMAnager : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
-    [SerializeField] private List<ScriptableObject> Inventory;
     public InventoryStructure inventoryStructure;
-    public BaseMaterial temp;
+    public WoodClass wood = new WoodClass();
 
-    public static InventoryMAnager Instance;
 
+
+    public static InventoryManager Instance;
     private void Awake()
     {
-        AddToInventory(temp, 10);
+
         // singleton
         if (Instance == null)
         {
@@ -21,14 +21,16 @@ public class InventoryMAnager : MonoBehaviour
         {
             Destroy(this);
         }
+        wood.MaterialName = "paloTE de dani";
+        AddToInventory(wood, 10);
     }
     private void Update()
     {
  
     }
-    public void AddToInventory(BaseMaterial newMat, int amount)
+    public void AddToInventory(BaseMat newMat, int amount)
     {
-        newMat.MaterialAmount = newMat.MaterialAmount + amount;
+        inventoryStructure.AddtoHotbat(wood,amount);
     }
     public void RemoveFromInventory(BaseMaterial oldMath, int amount) 
     {

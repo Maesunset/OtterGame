@@ -5,5 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "InventoryStructure", menuName = "Scriptable Objects/InventoryStructure")]
 public class InventoryStructure : ScriptableObject
 {
-    public List<BaseMath> Hotbar;
+    [SerializeField] private List<BaseMat> Hotbar = new List<BaseMat>();
+
+    public void AddtoHotbat(BaseMat mat, int amount = 0)
+    {
+        Hotbar.Add(mat);
+        Debug.Log(Hotbar[0].MaterialName);
+    }
 }
