@@ -30,7 +30,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void AddToInventory(BaseMat newMat, int amount)
     {
-        inventoryStructure.AddtoHotbat(wood,amount);
+
     }
     public void RemoveFromInventory(BaseMaterial oldMath, int amount) 
     {
