@@ -1964,12 +1964,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   images:
-  - {fileID: 1868154494}
-  - {fileID: 182867469}
-  - {fileID: 1171357069}
-  - {fileID: 835036162}
-  - {fileID: 1778514804}
-  - {fileID: 1902629857}
+  - {fileID: 1868154496}
+  - {fileID: 182867471}
+  - {fileID: 1171357071}
+  - {fileID: 835036164}
+  - {fileID: 1778514806}
+  - {fileID: 1902629859}
   itemsAmount:
   - {fileID: 646066957}
   - {fileID: 1353030239}

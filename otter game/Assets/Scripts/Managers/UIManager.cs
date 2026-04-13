@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private List<Image> images = new List<Image>();
+    public List<Image> images = new List<Image>();
     [SerializeField] private List<TextMeshProUGUI> itemsAmount = new List<TextMeshProUGUI>();
     [SerializeField] private InventoryStructure structure;
     public static UIManager Instance;
@@ -30,9 +30,9 @@ public class UIManager : MonoBehaviour
 
         for(int i = 0;i < structure.InventoryCount(); i++ )
         {
-     //       Debug.Log("I:" + i); 
-     //       if(i >= images.Count) break;
-     //       images[i].sprite = structure.inventorySprite(i); 
+    //        Debug.Log("I:" + i); 
+    //        if(i >= images.Count) break;
+    //        images[i].sprite = structure.inventorySprite(i); 
         }
     }
 }
