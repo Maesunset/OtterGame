@@ -11,8 +11,6 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
     private void Awake()
     {
-
-        // singleton
         if (Instance == null)
         {
             Instance = this;
@@ -21,12 +19,10 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(this);
         }
-        wood.MaterialName = "paloTE de dani";
-        AddToInventory(wood, 10);
     }
     private void Update()
     {
- 
+        
     }
     public void AddToInventory(BaseMat newMat, int amount)
     {

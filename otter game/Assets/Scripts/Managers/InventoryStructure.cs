@@ -6,9 +6,10 @@ public class InventoryStructure : ScriptableObject
 {
     [SerializeField] private List<BaseMaterial> Hotbar = new List<BaseMaterial>();
 
-    public void AddtoHotbat(BaseMaterial mat, int amount = 0)
+    public void AddtoHotbat(BaseMaterial mat)
     {
         Hotbar.Add(mat);
         Debug.Log(Hotbar[0].MaterialName);
+        UIManager.Instance.UpdateHotbar();
     }
 }

@@ -1,15 +1,27 @@
+using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private List<GameObject> images;
+    [SerializeField] private List<TextMeshProUGUI> itemsAmount;
+    [SerializeField] private InventoryStructure structure;
+    public static UIManager Instance;
+    private void Awake()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+    public void UpdateHotbar()
     {
         
     }

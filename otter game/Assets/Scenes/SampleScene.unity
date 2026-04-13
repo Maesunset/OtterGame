@@ -1963,6 +1963,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d788198bbe91954a8e7f5c2b3ce3946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  images:
+  - {fileID: 1868154494}
+  - {fileID: 182867469}
+  - {fileID: 1171357069}
+  - {fileID: 835036162}
+  - {fileID: 1778514804}
+  - {fileID: 1902629857}
+  itemsAmount:
+  - {fileID: 646066957}
+  - {fileID: 1353030239}
+  - {fileID: 472584629}
+  - {fileID: 1549934970}
+  - {fileID: 1182071280}
+  - {fileID: 1381225011}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

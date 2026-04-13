@@ -15,5 +15,4 @@ MonoBehaviour:
   materialName: 
   id: 1
   materialStackAmount: 0
-  materialAmount: 0
-  materialSprite: {fileID: 0}
+  materialSprite: {fileID: 7440981132975211316, guid: 97a5409291c723842997f179c2591d79, type: 3}
