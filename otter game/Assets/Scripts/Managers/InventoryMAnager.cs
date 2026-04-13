@@ -19,6 +19,8 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(this);
         }
+        //Debug.Log("0");
+        //UIManager.Instance.UpdateHotbar();
     }
     private void Update()
     {

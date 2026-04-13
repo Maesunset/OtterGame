@@ -1977,6 +1977,7 @@ MonoBehaviour:
   - {fileID: 1549934970}
   - {fileID: 1182071280}
   - {fileID: 1381225011}
+  structure: {fileID: 11400000, guid: c29a08d2ec734294199054c9fce4f816, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

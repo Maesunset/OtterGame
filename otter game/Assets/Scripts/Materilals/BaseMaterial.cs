@@ -5,7 +5,7 @@ public class BaseMaterial : ScriptableObject
 {
     [SerializeField] private string materialName;
     [SerializeField] private int id;
-    [SerializeField] private int materialStackAmount;
+    [SerializeField] private int materialAmount;
     [SerializeField] private Sprite materialSprite;
     [SerializeField] private BaseMat matClass;
 
@@ -21,11 +21,11 @@ public class BaseMaterial : ScriptableObject
         }
     }
 
-    public int MaterialStackAmount
+    public int MaterialAmount
     {
         get
         {
-            return materialStackAmount;
+            return materialAmount;
         }
     }
     public Sprite MaterialSprite

@@ -1,15 +1,20 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "InventoryStructure", menuName = "Scriptable Objects/InventoryStructure")]
 public class InventoryStructure : ScriptableObject
 {
-    [SerializeField] private List<BaseMaterial> Hotbar = new List<BaseMaterial>();
+    [SerializeField] private List<BaseMaterial> inventory = new List<BaseMaterial>();
 
-    public void AddtoHotbat(BaseMaterial mat)
+    public int InventoryCount()
     {
-        Hotbar.Add(mat);
-        Debug.Log(Hotbar[0].MaterialName);
-        UIManager.Instance.UpdateHotbar();
+        return inventory.Count;
     }
+
+    public Sprite inventorySprite(int index)
+    {
+        return inventory[index].MaterialSprite;
+    }
+
 }

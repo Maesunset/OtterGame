@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd8ae564639d894aaa9cf1bb6240c7d, type: 3}
   m_Name: InventoryStructure
   m_EditorClassIdentifier: Assembly-CSharp::InventoryStructure
-  Hotbar:
-  - {fileID: 11400000, guid: dccbe57d30bba5d479af4230ddaebb10, type: 2}
-  - {fileID: 11400000, guid: 0e144b28a896f9343bc00a6564a54532, type: 2}
+  inventory:
   - {fileID: 11400000, guid: d1fcf45d129cf2f4b8c5266f46dc15e7, type: 2}
+  - {fileID: 11400000, guid: 0e144b28a896f9343bc00a6564a54532, type: 2}
+  - {fileID: 11400000, guid: dccbe57d30bba5d479af4230ddaebb10, type: 2}
