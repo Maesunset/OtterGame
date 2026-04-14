@@ -30,9 +30,9 @@ public class UIManager : MonoBehaviour
 
         for(int i = 0;i < structure.InventoryCount(); i++ )
         {
-    //        Debug.Log("I:" + i); 
-    //        if(i >= images.Count) break;
-    //        images[i].sprite = structure.inventorySprite(i); 
+            Debug.Log("I:" + i); 
+            if(i >= images.Count) break;
+            images[i].sprite = structure.inventorySprite(i); 
         }
     }
 }
