@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Material_Wood
   materialName: Wood
   id: 1
-  materialAmount: 1
+  materialAmount: 45
   materialSprite: {fileID: 7440981132975211316, guid: 97a5409291c723842997f179c2591d79, type: 3}
