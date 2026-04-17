@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f0daffdfe704a47b206cc0d7814dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::hotbarItem
+  currentItemID: 0
 --- !u!1 &472584627
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f0daffdfe704a47b206cc0d7814dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::hotbarItem
+  currentItemID: 0
 --- !u!1 &902719505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,6 +1170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f0daffdfe704a47b206cc0d7814dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::hotbarItem
+  currentItemID: 0
 --- !u!1 &1182071278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1805,6 +1808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f0daffdfe704a47b206cc0d7814dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::hotbarItem
+  currentItemID: 0
 --- !u!1 &1868154494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,6 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f0daffdfe704a47b206cc0d7814dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::hotbarItem
+  currentItemID: 0
 --- !u!1 &1902629857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f0daffdfe704a47b206cc0d7814dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::hotbarItem
+  currentItemID: 0
 --- !u!1 &1990625637
 GameObject:
   m_ObjectHideFlags: 0
@@ -2043,12 +2049,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   images:
-  - {fileID: 1868154496}
-  - {fileID: 182867471}
-  - {fileID: 1171357071}
-  - {fileID: 835036164}
-  - {fileID: 1778514806}
-  - {fileID: 1902629859}
+  - {fileID: 1868154494}
+  - {fileID: 182867469}
+  - {fileID: 1171357069}
+  - {fileID: 835036162}
+  - {fileID: 1778514804}
+  - {fileID: 1902629857}
   itemsAmount:
   - {fileID: 646066957}
   - {fileID: 1353030239}
