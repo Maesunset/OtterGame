@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int materialSelected;
+   [SerializeField] private int materialSelected;
     
     public static GameManager Instance;
     private void Awake()
@@ -20,6 +20,15 @@ public class GameManager : MonoBehaviour
 
     public void ActualMaterial(int materialID)
     {
-        
+        if (materialID == materialSelected)
+        {
+            materialSelected = 0;
+            Debug.Log("unselect Material");
+        }
+        else
+        {
+            materialSelected = materialID;
+            Debug.Log("select new  Material");
+        }
     }
 }

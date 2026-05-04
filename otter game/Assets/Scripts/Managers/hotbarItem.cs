@@ -9,4 +9,9 @@ public class hotbarItem : MonoBehaviour
         currentItemID = newID;
     }
 
+    public int GetID()
+    {
+        return currentItemID;
+    }
+
 }
