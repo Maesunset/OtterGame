@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   [SerializeField] private int materialSelected;
-    
     public static GameManager Instance;
+    private Dictionary<int, int> scaleValues = new Dictionary<int, int>();
+
     private void Awake()
     {
         if (Instance == null)
@@ -18,17 +19,46 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ActualMaterial(int materialID)
+    public void LoadMaterial(int MaterialID)
     {
-        if (materialID == materialSelected)
+        if(scaleValues.TryGetValue(MaterialID, out var value))
         {
-            materialSelected = 0;
-            Debug.Log("unselect Material");
+            value++;
+            scaleValues[MaterialID] = value;
+            Debug.Log("new new value of material:");
         }
         else
         {
-            materialSelected = materialID;
-            Debug.Log("select new  Material");
+            scaleValues[MaterialID] = 1;
+            Debug.Log("add new material to scale");
         }
+    }
+
+    public void UnloadMaterial(int MaterialID)
+    {
+        if (scaleValues.TryGetValue(MaterialID, out var value))
+        {
+            value--;
+            if(value == 0)
+            {
+                scaleValues.Remove(MaterialID);
+                Debug.Log("material removed");
+            }
+            else
+            {
+                scaleValues[MaterialID] = value;
+                Debug.Log(" new value of material: " + value);
+            }
+        }
+        else
+        {
+            Debug.Log("no material ");
+        }
+
+    }
+    public void ResetDictionary()
+    {
+        scaleValues = new Dictionary<int, int>();
+        
     }
 }
