@@ -26,4 +26,15 @@ public class InventoryStructure : ScriptableObject
     {
         return inventory[index].ID;
     }
+    public int AllMaterialsCost(int ID)
+    {
+        foreach (BaseMaterial material in allMaterials)
+        {
+            if (material.ID == ID)
+            {
+                return material.MaterialCost;
+            }
+        }
+        return 0;   
+    }
 }

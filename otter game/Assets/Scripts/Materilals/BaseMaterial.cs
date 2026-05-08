@@ -6,17 +6,18 @@ public class BaseMaterial : ScriptableObject
     [SerializeField] private string materialName;
     [SerializeField] private int id;
     [SerializeField] private int materialAmount;
+    [SerializeField] private int materialCost;
     [SerializeField] private Sprite materialSprite;
 
     public string MaterialName
     {
-        get 
-        { 
-            return materialName; 
-        } 
-        set 
-        { 
-            materialName = value; 
+        get
+        {
+            return materialName;
+        }
+        set
+        {
+            materialName = value;
         }
     }
 
@@ -42,5 +43,11 @@ public class BaseMaterial : ScriptableObject
             return id;
         }
     }
-
+    public int MaterialCost
+    {
+        get
+        {
+            return materialCost;
+        }
+    }
 }

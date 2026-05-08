@@ -2349,7 +2349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718f4ea397c611445ac749704e7810c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  materialSelected: 0
+  inventoryStructure: {fileID: 11400000, guid: c29a08d2ec734294199054c9fce4f816, type: 2}
+  internalValue: 0
 --- !u!114 &1990625642
 MonoBehaviour:
   m_ObjectHideFlags: 0

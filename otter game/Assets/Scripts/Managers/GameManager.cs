@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private Dictionary<int, int> scaleValues = new Dictionary<int, int>();
+    [SerializeField] private InventoryStructure inventoryStructure;
+    [SerializeField] private int internalValue = 0;
 
     private void Awake()
     {
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
             scaleValues[MaterialID] = 1;
             Debug.Log("add new material to scale");
         }
+        UpdateInternalValue();
     }
 
     public void UnloadMaterial(int MaterialID)
@@ -54,11 +57,18 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("no material ");
         }
-
+        UpdateInternalValue();
     }
     public void ResetDictionary()
     {
         scaleValues = new Dictionary<int, int>();
-        
+    }
+    public void UpdateInternalValue()
+    {
+        foreach(var values in scaleValues)
+        {
+            print(values);
+        }
+
     }
 }
