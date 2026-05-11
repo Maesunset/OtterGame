@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     private Dictionary<int, int> scaleValues = new Dictionary<int, int>();
     [SerializeField] private InventoryStructure inventoryStructure;
+    //[SerializeField] private
     [SerializeField] private int internalValue = 0;
     [SerializeField] private List<GameObject> animalsList = new List<GameObject>();
     [SerializeField] private GameObject actualAnimal;
@@ -81,5 +82,15 @@ public class GameManager : MonoBehaviour
                 internalValue += tempValue;
             }
         }
+    }
+
+    public void spawnAnimal()
+    {
+        if (actualAnimal != null)
+        {
+            Destroy(actualAnimal);
+            actualAnimal = null;
+        }
+        
     }
 }
