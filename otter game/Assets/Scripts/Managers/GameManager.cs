@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
     private Dictionary<int, int> scaleValues = new Dictionary<int, int>();
     [SerializeField] private InventoryStructure inventoryStructure;
     [SerializeField] private int internalValue = 0;
+    [SerializeField] private List<GameObject> animalsList = new List<GameObject>();
+    [SerializeField] private GameObject actualAnimal;
+    
 
     private void Awake()
     {
