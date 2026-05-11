@@ -78,6 +78,5 @@ public class GameManager : MonoBehaviour
                 internalValue += tempValue;
             }
         }
-
     }
 }
