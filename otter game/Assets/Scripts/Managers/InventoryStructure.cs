@@ -7,6 +7,10 @@ public class InventoryStructure : ScriptableObject
     [SerializeField] private List<BaseMaterial> allMaterials = new List<BaseMaterial>();
     [SerializeField] private List<BaseMaterial> inventory = new List<BaseMaterial>();
 
+    public int AllmaterialsCount()
+    {
+        return allMaterials.Count;
+    }
     public int InventoryCount()
     {
         return inventory.Count;

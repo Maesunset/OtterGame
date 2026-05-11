@@ -15,4 +15,5 @@ MonoBehaviour:
   materialName: Spider_Web
   id: 6
   materialAmount: 0
+  materialCost: 3
   materialSprite: {fileID: -4753729093463326098, guid: 03bee1c18f675fa478d2520a29289d80, type: 3}

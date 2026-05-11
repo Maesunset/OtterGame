@@ -27,12 +27,10 @@ public class GameManager : MonoBehaviour
         {
             value++;
             scaleValues[MaterialID] = value;
-            Debug.Log("new new value of material:");
         }
         else
         {
             scaleValues[MaterialID] = 1;
-            Debug.Log("add new material to scale");
         }
         UpdateInternalValue();
     }
@@ -45,12 +43,10 @@ public class GameManager : MonoBehaviour
             if(value == 0)
             {
                 scaleValues.Remove(MaterialID);
-                Debug.Log("material removed");
             }
             else
             {
                 scaleValues[MaterialID] = value;
-                Debug.Log(" new value of material: " + value);
             }
         }
         else
@@ -65,9 +61,22 @@ public class GameManager : MonoBehaviour
     }
     public void UpdateInternalValue()
     {
+        int tempValue;
+        internalValue = 0;
+        // debug all prosibilities
         foreach(var values in scaleValues)
         {
-            print(values);
+            
+            Debug.Log(values);
+        }
+
+        for(int i = 1;i<=inventoryStructure.AllmaterialsCount() ;i++)
+        {
+            if(scaleValues.TryGetValue(i, out int amount))
+            {
+                tempValue = inventoryStructure.AllMaterialsCost(i) * amount;
+                internalValue += tempValue;
+            }
         }
 
     }

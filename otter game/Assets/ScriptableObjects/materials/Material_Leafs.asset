@@ -15,4 +15,5 @@ MonoBehaviour:
   materialName: Leafs
   id: 3
   materialAmount: 0
+  materialCost: 2
   materialSprite: {fileID: 7907336577712263196, guid: 6abe62e97c055a748860e63f358e6e10, type: 3}

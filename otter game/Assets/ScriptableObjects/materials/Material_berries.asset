@@ -15,4 +15,5 @@ MonoBehaviour:
   materialName: Berries
   id: 4
   materialAmount: 0
+  materialCost: 2
   materialSprite: {fileID: 2408991836313283690, guid: c36d9cdd5bcf4f2478a1ed84eccb6848, type: 3}

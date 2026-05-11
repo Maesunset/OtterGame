@@ -15,4 +15,5 @@ MonoBehaviour:
   materialName: SerpentSkin
   id: 5
   materialAmount: 0
+  materialCost: 3
   materialSprite: {fileID: 2461973116816360179, guid: 1ad13f2839116974d85289c72d1f4a4e, type: 3}

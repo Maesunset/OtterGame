@@ -15,4 +15,5 @@ MonoBehaviour:
   materialName: Rocks
   id: 2
   materialAmount: 0
+  materialCost: 1
   materialSprite: {fileID: -2705597995764985619, guid: 5360fca64e8197f4c8ea8e0d2367a43e, type: 3}
