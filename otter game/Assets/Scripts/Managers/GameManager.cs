@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,9 +9,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private InventoryStructure inventoryStructure;
     //[SerializeField] private
     [SerializeField] private int internalValue = 0;
-    [SerializeField] private List<GameObject> animalsList = new List<GameObject>();
+    [SerializeField] private AnimalsBiomeList actualBiome;
     [SerializeField] private GameObject actualAnimal;
-    
+    [SerializeField] private GameObject spawnPoint;
+     
 
     private void Awake()
     {
@@ -23,6 +25,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        SpawnAnimal();
     }
 
     public void LoadMaterial(int MaterialID)
@@ -84,13 +91,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void spawnAnimal()
+    public void SpawnAnimal()
     {
         if (actualAnimal != null)
         {
             Destroy(actualAnimal);
             actualAnimal = null;
         }
-        
+
+        GameObject temp = actualBiome.ReturnAnimal();
+        actualAnimal = temp;
+        Instantiate(temp,spawnPoint.transform);
     }
 }
