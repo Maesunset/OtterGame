@@ -6,6 +6,7 @@ public class BaseAnimalPReferences : ScriptableObject
 {
     [SerializeField] private string animalName;
     [SerializeField] private int animalID;
+    [SerializeField] private int animalTradeProbability;
     public List<BaseMaterial> animalLikes;
     public List<BaseMaterial> animalDislikes;
     public List<BaseMaterial> allTradePool;
@@ -26,7 +27,14 @@ public class BaseAnimalPReferences : ScriptableObject
             return animalID;
         }
     }
-    
+
+    public int AnimalTradeProbability
+    {
+        get
+        {
+            return animalTradeProbability;
+        }
+    }
     
     
 }
