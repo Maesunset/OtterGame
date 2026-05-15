@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public List<TextMeshProUGUI> itemsAmount;
     [SerializeField] private InventoryStructure structure;
     public static UIManager Instance;
+    [SerializeField] private GameObject hotbar;
+    [SerializeField] private bool isActive = false; 
 
     private void Awake()
     {
@@ -33,6 +35,20 @@ public class UIManager : MonoBehaviour
             images[i].GetComponent<hotbarItem>().saveID(structure.InventoryID(i));
             itemsAmount[i].text = structure.InventoryAmount(i).ToString();
             
+        }
+    }
+
+    public void triggerHotbar()
+    {
+        if(isActive)
+        {
+            hotbar.SetActive(false);
+            isActive = false;
+        }
+        else
+        {
+            hotbar.SetActive(true);
+            isActive = true;
         }
     }
 }
