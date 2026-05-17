@@ -21,19 +21,29 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        StartDebuging();
         UpdateHotbar();
     }
 
-    private void Update()
+    private void StartDebuging()
     {
-        
+        for (int i =0;i<= inventoryStructure.InventoryCount();i++)
+        {
+            inventoryStructure.UpdateMaterialValues(i,10);
+        }
     }
     public void AddToInventory(int itemID, int itemAmount)
     {
+        int temp = inventoryStructure.InventoryAmount(itemID);
+        temp += itemAmount;
+        inventoryStructure.UpdateMaterialValues(itemID, temp);
         UpdateHotbar();
     }
     public void RemoveFromInventory(int itemID, int itemAmount) 
     {
+        int temp = inventoryStructure.InventoryAmount(itemID);
+        temp -= itemAmount;
+        inventoryStructure.UpdateMaterialValues(itemID, temp);
         UpdateHotbar();
     }
 

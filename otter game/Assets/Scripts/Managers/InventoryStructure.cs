@@ -23,6 +23,7 @@ public class InventoryStructure : ScriptableObject
     
     public int InventoryAmount(int index)
     {
+        Debug.Log(inventory[index].MaterialAmount);
         return inventory[index].MaterialAmount;
     }
 
@@ -40,5 +41,16 @@ public class InventoryStructure : ScriptableObject
             }
         }
         return 0;   
+    }
+
+    public void UpdateMaterialValues(int id, int amount)
+    {
+        foreach (BaseMaterial material in allMaterials)
+        {
+            if (material.ID == id)
+            {
+                material.MaterialAmount = amount;
+            }
+        }
     }
 }
