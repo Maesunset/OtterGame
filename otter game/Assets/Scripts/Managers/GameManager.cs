@@ -121,10 +121,23 @@ public class GameManager : MonoBehaviour
             Debug.Log(tradeTemporal);
             for (int i = 0; i < tradeTemporal; i++)
             {
-                Debug.Log("trade number:" + i);
-                
-                
-                
+                int temporalID = animalpreferences.RandomIDTrade();
+
+                if(animalScaleValues.TryGetValue(temporalID, out int materialId))
+                {
+                    materialId++;
+                    animalScaleValues[temporalID] = materialId;
+                }
+                else
+                {
+                    animalScaleValues.Add(temporalID,1);
+                }
+                Debug.Log("trade number:" + i + " Material Selected: " + inventoryStructure.AllMaterialsName(temporalID) );
+            }
+            foreach(var values in animalScaleValues)
+            {
+            
+                Debug.Log(values);
             }
         }
     }

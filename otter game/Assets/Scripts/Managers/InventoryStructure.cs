@@ -77,4 +77,16 @@ public class InventoryStructure : ScriptableObject
             }
         }
     }
+
+    public string AllMaterialsName(int materialId)
+    {
+        foreach (BaseMaterial material in allMaterials)
+        {
+            if (material.ID == materialId)
+            {
+                return material.MaterialName;
+            }
+        }
+        return null; 
+    }
 }

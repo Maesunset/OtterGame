@@ -52,5 +52,23 @@ public class BaseAnimalPReferences : ScriptableObject
             return minTradeItems;
         }
     }
+
+    public int RandomIDTrade()
+    {
+        int probability = Random.Range(1, 101);
+        if (animalTradeProbability > probability)
+        {
+            // return all trade pool
+            int temp = Random.Range(0, allTradePool.Count);
+            return allTradePool[temp].ID;
+        }
+        else
+        {
+            // return preferences pool
+            int temp = Random.Range(0, preferencesPool.Count);
+            return preferencesPool[temp].ID;
+        }
+        return 0;
+    }
     
 }
