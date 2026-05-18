@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class SelectUI : MonoBehaviour
 {
@@ -27,7 +25,7 @@ public class SelectUI : MonoBehaviour
                     if (results[i].gameObject.CompareTag(tagToSelect))
                     {
                         if (results[i].gameObject.GetComponent<hotbarItem>())
-                        {
+                        {   
                             GameManager.Instance.LoadMaterial(results[i].gameObject.GetComponent<hotbarItem>().GetID());
                         }
                     }

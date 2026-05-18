@@ -30,6 +30,7 @@ public class InventoryStructure : ScriptableObject
     {
         return inventory[index].ID;
     }
+    
     public int AllMaterialsCost(int ID)
     {
         foreach (BaseMaterial material in allMaterials)
