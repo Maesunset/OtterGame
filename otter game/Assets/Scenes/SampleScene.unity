@@ -2855,7 +2855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   inventoryStructure: {fileID: 11400000, guid: c29a08d2ec734294199054c9fce4f816, type: 2}
   internalValue: 0
-  actualBiome: {fileID: 11400000, guid: 5967466a39677cd4e9c4565643b75315, type: 2}
+  actualBiome: {fileID: 11400000, guid: 13720d1c8f4873e46a4de0224653108c, type: 2}
   actualAnimal: {fileID: 0}
   spawnPoint: {fileID: 277657712}
 --- !u!114 &1990625642

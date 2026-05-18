@@ -27,7 +27,7 @@ public class InventoryManager : MonoBehaviour
 
     private void StartDebuging()
     {
-        for (int i =0;i<= inventoryStructure.InventoryCount();i++)
+        for (int i = 0 ; i<= inventoryStructure.InventoryCount();i++)
         {
             inventoryStructure.UpdateMaterialValues(i,10);
         }

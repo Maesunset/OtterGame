@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    //  hotbar
     public List<GameObject> images = new List<GameObject>();
+    // texto en la hotbar
     public List<TextMeshProUGUI> itemsAmount;
     [SerializeField] private InventoryStructure structure;
     public static UIManager Instance;
@@ -27,14 +29,14 @@ public class UIManager : MonoBehaviour
     public void UpdateHotbar()
     {
         if(structure.InventoryCount() == 0) return;
-        for(int i = 0;i < structure.InventoryCount(); i++ )
+        int temp = 1;
+        foreach (var image in images)
         {
-            if(i >= images.Count) break;
-            images[i].GetComponent<Image>().sprite = structure.inventorySprite(i); 
-            images[i].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-            images[i].GetComponent<hotbarItem>().saveID(structure.InventoryID(i));
-            itemsAmount[i].text = structure.InventoryAmount(i).ToString();
-            
+            image.GetComponent<Image>().sprite = structure.inventorySprite(temp);
+            image.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            image.GetComponent<hotbarItem>().saveID(structure.InventoryID(temp));
+            itemsAmount[temp-1].text = structure.InventoryAmount(temp).ToString();
+            temp++;
         }
     }
 

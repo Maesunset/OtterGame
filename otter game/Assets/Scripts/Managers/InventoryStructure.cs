@@ -18,17 +18,42 @@ public class InventoryStructure : ScriptableObject
 
     public Sprite inventorySprite(int index)
     {
-        return inventory[index].MaterialSprite;
+        foreach (var material in inventory)
+        {
+            if (material.ID == index)
+            {
+                return material.MaterialSprite;
+            }
+        }
+
+        return null;
     }
     
     public int InventoryAmount(int index)
     {
-        return inventory[index].MaterialAmount;
+        //return inventory[index].MaterialAmount;
+        foreach (BaseMaterial material in inventory)
+        {
+            if (material.ID == index)
+            {
+                return material.MaterialAmount;
+            }
+        }
+
+        return 0;
     }
 
     public int InventoryID(int index)
     {
-        return inventory[index].ID;
+        foreach (BaseMaterial material in allMaterials)
+        {
+            if (material.ID == index)
+            {
+                return material.ID;
+            }
+        }
+
+        return 0;
     }
     
     public int AllMaterialsCost(int ID)
