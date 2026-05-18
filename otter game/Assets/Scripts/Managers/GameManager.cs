@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     private Dictionary<int, int> animalScaleValues = new Dictionary<int, int>();
     [SerializeField] private InventoryStructure inventoryStructure;
     [SerializeField] private int internalValue = 0;
-    [SerializeField] private int animalValue;
+    [SerializeField] private int animalInternalValue;
     [SerializeField] private AnimalsBiomeList actualBiome;
     [SerializeField] private GameObject actualAnimal;
     [SerializeField] private GameObject spawnPoint;
@@ -140,10 +140,20 @@ public class GameManager : MonoBehaviour
                 Debug.Log(values);
             }
         }
+        AnimalScaleValue();
     }
 
     public void AnimalScaleValue()
     {
-        
+        int tempValue = 0;
+        for(int i = 1;i<=inventoryStructure.AllmaterialsCount() ;i++)
+        {
+            if(animalScaleValues.TryGetValue(i, out int amount))
+            {
+                tempValue = inventoryStructure.AllMaterialsCost(i) * amount;
+                animalInternalValue += tempValue;
+            }
+        }
     }
+    
 }
