@@ -30,7 +30,6 @@ public class BaseMaterial : ScriptableObject
         set
         {
             materialAmount = value;
-            Debug.Log("update material amount of material " + name + " : " + materialAmount);
         }
     }
     public Sprite MaterialSprite
