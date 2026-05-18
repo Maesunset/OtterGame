@@ -7,6 +7,8 @@ public class BaseAnimalPReferences : ScriptableObject
     [SerializeField] private string animalName;
     [SerializeField] private int animalID;
     [SerializeField] private int animalTradeProbability;
+    [SerializeField] private int maxTradeItems;
+    [SerializeField] private int minTradeItems;
     public List<BaseMaterial> animalLikes;
     public List<BaseMaterial> animalDislikes;
     public List<BaseMaterial> allTradePool;
@@ -35,6 +37,20 @@ public class BaseAnimalPReferences : ScriptableObject
             return animalTradeProbability;
         }
     }
-    
+
+    public int MaxTradeItems
+    {
+        get
+        {
+            return maxTradeItems;
+        }
+    }    
+    public int MinTradeItems
+    {
+        get
+        {
+            return minTradeItems;
+        }
+    }
     
 }

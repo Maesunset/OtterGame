@@ -52,7 +52,6 @@ public class InventoryStructure : ScriptableObject
                 return material.ID;
             }
         }
-
         return 0;
     }
     

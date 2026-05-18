@@ -4,6 +4,19 @@ public class AnimalManager : MonoBehaviour
 {
     [SerializeField] private BaseAnimalPReferences preferences;
     [SerializeField] private Animator animalAnim;
-    
+    [SerializeField] private GameObject animalBubble;
+
+    public string AnimalName()
+    {
+        return preferences.name;
+    }
+
+    public BaseAnimalPReferences Preferences
+    {
+        get
+        {
+            return preferences;
+        }
+    }
     
 }

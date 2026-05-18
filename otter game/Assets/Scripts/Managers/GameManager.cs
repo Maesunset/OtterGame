@@ -1,5 +1,3 @@
-
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +5,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private Dictionary<int, int> scaleValues = new Dictionary<int, int>();
+    private Dictionary<int, int> animalScaleValues = new Dictionary<int, int>();
     [SerializeField] private InventoryStructure inventoryStructure;
-    //[SerializeField] private
     [SerializeField] private int internalValue = 0;
+    [SerializeField] private int animalValue;
     [SerializeField] private AnimalsBiomeList actualBiome;
     [SerializeField] private GameObject actualAnimal;
     [SerializeField] private GameObject spawnPoint;
@@ -67,9 +66,14 @@ public class GameManager : MonoBehaviour
         }
         UpdateInternalValue();
     }
-    public void ResetDictionary()
+    public void ResetPlayerDictionary()
     {
         scaleValues = new Dictionary<int, int>();
+    }
+
+    public void ResetAnimalDictionary()
+    {
+        animalScaleValues = new Dictionary<int, int>();
     }
     public void UpdateInternalValue()
     {
@@ -103,5 +107,30 @@ public class GameManager : MonoBehaviour
         GameObject temp = actualBiome.ReturnAnimal();
         actualAnimal = temp;
         Instantiate(temp,spawnPoint.transform);
+        AnimalTrade();
+    }
+
+    public void AnimalTrade()
+    {
+        // get animal manager
+        if (actualAnimal.TryGetComponent<AnimalManager>(out AnimalManager animal))
+        {
+            // get animal preferences
+            BaseAnimalPReferences animalpreferences = animal.Preferences;
+            int tradeTemporal = Random.Range(animalpreferences.MinTradeItems,animalpreferences.MaxTradeItems + 1);
+            Debug.Log(tradeTemporal);
+            for (int i = 0; i < tradeTemporal; i++)
+            {
+                Debug.Log("trade number:" + i);
+                
+                
+                
+            }
+        }
+    }
+
+    public void AnimalScaleValue()
+    {
+        
     }
 }
