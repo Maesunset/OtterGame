@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
     {
         SpawnAnimal();
     }
-
     public void LoadMaterial(int MaterialID)
     {
         if(actualAnimal == null) return;
@@ -47,7 +46,6 @@ public class GameManager : MonoBehaviour
         InventoryManager.Instance.RemoveFromInventory(MaterialID,1);
         UpdateInternalValue();
     }
-
     public void UnloadMaterial(int MaterialID)
     {
         if(actualAnimal == null) return;
@@ -95,7 +93,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
     public void SpawnAnimal()
     {
         if (actualAnimal != null)
@@ -109,9 +106,9 @@ public class GameManager : MonoBehaviour
         Instantiate(temp,spawnPoint.transform);
         AnimalTrade();
     }
-
     public void AnimalTrade()
     {
+        ResetAnimalDictionary();
         // get animal manager
         if (actualAnimal.TryGetComponent<AnimalManager>(out AnimalManager animal))
         {
@@ -142,7 +139,6 @@ public class GameManager : MonoBehaviour
         }
         AnimalScaleValue();
     }
-
     public void AnimalScaleValue()
     {
         int tempValue = 0;
@@ -155,5 +151,4 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
 }
