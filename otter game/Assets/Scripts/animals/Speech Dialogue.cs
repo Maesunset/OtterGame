@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SpeechDialogue : MonoBehaviour
 {
-    [SerializeField] private float sizex ;
-    [SerializeField] private float sizey ;
+    [SerializeField] private float sizex;
+    [SerializeField] private float maxScale;
+    [SerializeField] private float minScale;
     [SerializeField] private List<BaseMaterial> materials = new List<BaseMaterial>();
     private Dictionary<BaseMaterial, int> speechDictionary = new Dictionary<BaseMaterial, int>();
     [SerializeField] private List<GameObject>  speechList = new List<GameObject>();
@@ -35,38 +36,27 @@ public class SpeechDialogue : MonoBehaviour
     {
         int count = speechDictionary.Keys.Count;
         int index = 0;
-
         foreach (BaseMaterial material in speechDictionary.Keys)
         {
             GameObject temp = new GameObject("Material " + material);
             temp.transform.SetParent(transform);
-
-            float posX = 0f;
-
+            float posX;
             if (count == 1)
             {
-                // Caso especial: solo uno → al centro
                 posX = 0f;
             }
             else
             {
-                // Espaciado dinámico: desde -sizex hasta +sizex
                 float spacing = (2f * sizex) / (count - 1);
                 posX = -sizex + index * spacing;
             }
-
             temp.transform.position = transform.position + new Vector3(posX, 0, 0);
-            temp.transform.localScale = new Vector3(0.5f, 0.5f, 1);
-
+            temp.transform.localScale = new Vector3(0.3f, 0.3f, 1);
             SpriteRenderer sr = temp.AddComponent<SpriteRenderer>();
             sr.sprite = material.MaterialSprite;
             sr.sortingOrder = 5;
-
             speechList.Add(temp);
-
             index++;
         }
-
-
     }
 }
