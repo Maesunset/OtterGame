@@ -4,7 +4,7 @@ public class AnimalManager : MonoBehaviour
 {
     [SerializeField] private BaseAnimalPReferences preferences;
     [SerializeField] private Animator animalAnim;
-    [SerializeField] private GameObject animalBubble;
+    [SerializeField] private GameObject animalBubbleSpawn;
 
     public string AnimalName()
     {
@@ -18,5 +18,12 @@ public class AnimalManager : MonoBehaviour
             return preferences;
         }
     }
-    
+
+    public GameObject AnimalBubbleSpawn
+    {
+        get
+        {
+            return animalBubbleSpawn;
+        }
+    }
 }

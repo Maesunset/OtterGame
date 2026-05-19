@@ -103,6 +103,18 @@ PrefabInstance:
       propertyPath: preferences
       value: 
       objectReference: {fileID: 11400000, guid: 61596892a52bfac4b90db1f90be745d7, type: 2}
+    - target: {fileID: 1127627322703936674, guid: 4d5f88c1a59b7eb468f4995cd58ddd0c, type: 3}
+      propertyPath: animalBubbleSpawn
+      value: 
+      objectReference: {fileID: 8636937598834679291}
+    - target: {fileID: 1398921641499956850, guid: 4d5f88c1a59b7eb468f4995cd58ddd0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398921641499956850, guid: 4d5f88c1a59b7eb468f4995cd58ddd0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.45
+      objectReference: {fileID: 0}
     - target: {fileID: 2370812347139337630, guid: 4d5f88c1a59b7eb468f4995cd58ddd0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -159,5 +171,10 @@ PrefabInstance:
 --- !u!4 &1852045239406173147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2370812347139337630, guid: 4d5f88c1a59b7eb468f4995cd58ddd0c, type: 3}
+  m_PrefabInstance: {fileID: 4131234698478990917}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8636937598834679291 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5659204961399614398, guid: 4d5f88c1a59b7eb468f4995cd58ddd0c, type: 3}
   m_PrefabInstance: {fileID: 4131234698478990917}
   m_PrefabAsset: {fileID: 0}

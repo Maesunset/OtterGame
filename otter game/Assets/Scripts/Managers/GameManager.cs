@@ -129,12 +129,6 @@ public class GameManager : MonoBehaviour
                 {
                     animalScaleValues.Add(temporalID,1);
                 }
-                Debug.Log("trade number:" + i + " Material Selected: " + inventoryStructure.AllMaterialsName(temporalID) );
-            }
-            foreach(var values in animalScaleValues)
-            {
-            
-                Debug.Log(values);
             }
         }
         AnimalScaleValue();
