@@ -68,7 +68,5 @@ public class BaseAnimalPReferences : ScriptableObject
             int temp = Random.Range(0, preferencesPool.Count);
             return preferencesPool[temp].ID;
         }
-        return 0;
     }
-    
 }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AnimalsBiomeList actualBiome;
     [SerializeField] private GameObject actualAnimal;
     [SerializeField] private GameObject spawnPoint;
+    [SerializeField] private GameObject speechDialogue;
      
 
     private void Awake()
