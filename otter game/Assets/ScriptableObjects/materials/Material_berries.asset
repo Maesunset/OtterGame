@@ -16,4 +16,4 @@ MonoBehaviour:
   id: 4
   materialAmount: 10
   materialCost: 2
-  materialSprite: {fileID: 2408991836313283690, guid: c36d9cdd5bcf4f2478a1ed84eccb6848, type: 3}
+  materialSprite: {fileID: 21300000, guid: b76fa01dca58e1845b97abea15ed6497, type: 3}

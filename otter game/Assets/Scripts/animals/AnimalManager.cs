@@ -23,4 +23,22 @@ public class AnimalManager : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    
+    public void VisualizeDialogue()
+    {
+        speechDialgue.SetActive(true);
+        if (speechDialgue.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech))
+        {
+            speech.showMaterialsInBubble();
+        }
+    }
+
+    public void AddToDialgue(BaseMaterial material)
+    {
+        if (speechDialgue.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech))
+        {
+            speech.AddMaterial(material);
+        }
+            
+    }
 }
