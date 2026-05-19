@@ -26,4 +26,9 @@ public class AnimalManager : MonoBehaviour
             return animalBubbleSpawn;
         }
     }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }

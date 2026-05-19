@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AnimalsBiomeList actualBiome;
     [SerializeField] private GameObject actualAnimal;
     [SerializeField] private GameObject spawnPoint;
-    [SerializeField] private GameObject speechDialogue;
+    [SerializeField] private GameObject dialogueGO;
      
 
     private void Awake()
@@ -32,6 +34,15 @@ public class GameManager : MonoBehaviour
     {
         SpawnAnimal();
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnAnimal();
+        }
+    }
+
     public void LoadMaterial(int MaterialID)
     {
         if(actualAnimal == null) return;
@@ -98,13 +109,17 @@ public class GameManager : MonoBehaviour
     {
         if (actualAnimal != null)
         {
-            Destroy(actualAnimal);
+            animalInternalValue = 0;
+            actualAnimal.TryGetComponent<AnimalManager>(out AnimalManager animal);
             actualAnimal = null;
+            dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech);
+            speech.ResetSpeech();
+            animal.Destroy();
+            
         }
 
         GameObject temp = actualBiome.ReturnAnimal();
-        actualAnimal = temp;
-        Instantiate(temp,spawnPoint.transform);
+        actualAnimal = Instantiate(temp,spawnPoint.transform);
         AnimalTrade();
     }
     public void AnimalTrade()
@@ -119,7 +134,11 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < tradeTemporal; i++)
             {
                 int temporalID = animalpreferences.RandomIDTrade();
-
+                
+                if(dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech))
+                {
+                    speech.AddMaterial(inventoryStructure.ReturnMaterialFromID(temporalID));
+                }
                 if(animalScaleValues.TryGetValue(temporalID, out int materialId))
                 {
                     materialId++;
@@ -153,8 +172,10 @@ public class GameManager : MonoBehaviour
         if (actualAnimal.TryGetComponent<AnimalManager>(out AnimalManager animal))
         {
             GameObject temp = animal.AnimalBubbleSpawn;
-            speechDialogue.transform.position = spawnPoint.transform.position + temp.transform.position;
-            speechDialogue.SetActive(true);
+            dialogueGO.transform.position = spawnPoint.transform.position + temp.transform.position;
+            dialogueGO.SetActive(true);
         }
+        dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech);
+        speech.showMaterialsInBubble();
     }
 }
