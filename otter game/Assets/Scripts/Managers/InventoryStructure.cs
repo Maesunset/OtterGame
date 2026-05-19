@@ -89,4 +89,16 @@ public class InventoryStructure : ScriptableObject
         }
         return null; 
     }
+
+    public BaseMaterial ReturnMaterialFromID(int materialId)
+    {
+        foreach (var material in allMaterials)
+        {
+            if (material.ID == materialId)
+            {
+                return material;
+            }
+        }
+        return null;
+    }
 }
