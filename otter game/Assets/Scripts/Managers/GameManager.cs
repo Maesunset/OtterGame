@@ -116,7 +116,6 @@ public class GameManager : MonoBehaviour
             // get animal preferences
             BaseAnimalPReferences animalpreferences = animal.Preferences;
             int tradeTemporal = Random.Range(animalpreferences.MinTradeItems,animalpreferences.MaxTradeItems + 1);
-            Debug.Log(tradeTemporal);
             for (int i = 0; i < tradeTemporal; i++)
             {
                 int temporalID = animalpreferences.RandomIDTrade();
@@ -144,6 +143,18 @@ public class GameManager : MonoBehaviour
                 tempValue = inventoryStructure.AllMaterialsCost(i) * amount;
                 animalInternalValue += tempValue;
             }
+        }
+        VisualizeSpeechDialogue();
+    }
+    
+    public void VisualizeSpeechDialogue()
+    {
+        if(actualAnimal == null) return;
+        if (actualAnimal.TryGetComponent<AnimalManager>(out AnimalManager animal))
+        {
+            GameObject temp = animal.AnimalBubbleSpawn;
+            speechDialogue.transform.position = spawnPoint.transform.position + temp.transform.position;
+            speechDialogue.SetActive(true);
         }
     }
 }
