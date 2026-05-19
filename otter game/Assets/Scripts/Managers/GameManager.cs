@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AnimalsBiomeList actualBiome;
     [SerializeField] private GameObject actualAnimal;
     [SerializeField] private GameObject spawnPoint;
-    [SerializeField] private GameObject dialogueGO;
-     
 
     private void Awake()
     {
@@ -112,8 +110,8 @@ public class GameManager : MonoBehaviour
             animalInternalValue = 0;
             actualAnimal.TryGetComponent<AnimalManager>(out AnimalManager animal);
             actualAnimal = null;
-            dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech);
-            speech.ResetSpeech();
+           // dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech);
+           // speech.ResetSpeech();
             animal.Destroy();
             
         }
@@ -135,10 +133,10 @@ public class GameManager : MonoBehaviour
             {
                 int temporalID = animalpreferences.RandomIDTrade();
                 
-                if(dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech))
-                {
-                    speech.AddMaterial(inventoryStructure.ReturnMaterialFromID(temporalID));
-                }
+                //if(dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech))
+                //{
+                //    speech.AddMaterial(inventoryStructure.ReturnMaterialFromID(temporalID));
+                //}
                 if(animalScaleValues.TryGetValue(temporalID, out int materialId))
                 {
                     materialId++;
@@ -163,19 +161,19 @@ public class GameManager : MonoBehaviour
                 animalInternalValue += tempValue;
             }
         }
-        VisualizeSpeechDialogue();
+       // VisualizeSpeechDialogue();
     }
     
-    public void VisualizeSpeechDialogue()
-    {
-        if(actualAnimal == null) return;
-        if (actualAnimal.TryGetComponent<AnimalManager>(out AnimalManager animal))
-        {
-            GameObject temp = animal.AnimalBubbleSpawn;
-            dialogueGO.transform.position = spawnPoint.transform.position + temp.transform.position;
-            dialogueGO.SetActive(true);
-        }
-        dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech);
-        speech.showMaterialsInBubble();
-    }
+    //public void VisualizeSpeechDialogue()
+    //{
+    //    if(actualAnimal == null) return;
+    //    if (actualAnimal.TryGetComponent<AnimalManager>(out AnimalManager animal))
+    //    {
+    //        GameObject temp = animal.AnimalBubbleSpawn;
+    //        dialogueGO.transform.position = spawnPoint.transform.position + temp.transform.position;
+    //        dialogueGO.SetActive(true);
+    //    }
+    //    dialogueGO.TryGetComponent<SpeechDialogue>(out SpeechDialogue speech);
+    //    speech.showMaterialsInBubble();
+    //}
 }

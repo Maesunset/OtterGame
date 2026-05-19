@@ -35,6 +35,5 @@ public class SpeechDialogue : MonoBehaviour
         {
             Debug.Log(material +  " " + speechDictionary[material]);
         }
-        
     }
 }
